@@ -1,0 +1,133 @@
+<head>
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="./style.css">
+   <title>WePay - Бесплатный онлайн банкинг</title>
+</head>
+
+
+
+<main>
+
+   <!-- Пин-код -->
+   
+   <div class="pin-innerText">
+      <h1 class="title">****</h1>
+   </div>
+   <div class="pin">
+      <button class="pin-number">1</button>
+      <button class="pin-number">2</button>
+      <button class="pin-number">3</button>
+      <button class="pin-number">4</button>
+      <button class="pin-number">5</button>
+      <button class="pin-number">6</button>
+      <button class="pin-number">7</button>
+      <button class="pin-number">8</button>
+      <button class="pin-number">9</button>
+      <button class="pin-number">0</button>
+      <button class="clear">Стереть</button>
+      <button >Вход</button>
+   </div>
+   <!-- Widgets -->
+   <button class="show_form">Добавить карту</button>
+   <!-- form to add -->
+   <form class="add_form">
+      <h2>Добавить карту</h2>
+      <div class="data">
+         <input value="Main" name="name" type="text" placeholder="Имя карты">
+         <input value="4278111111111111" name="number" type="text" placeholder="Номер карты">
+         <input value="10000" name="balance" type="text" placeholder="Баланс карты">
+         <input value="05" name="month" type="text" placeholder="Месяц" required>
+         <input value="11" name="year" type="text" placeholder="Год" required>
+      </div>
+      <button class="remove_form">Добавить</button>
+   </form>
+
+
+   <!-- transacations -->
+   <form class="transaction-form">
+      <h2>Оплатить транзакцию</h2>
+      <div class="form-data-transactions">
+         <span>Выберите функцию ниже:</span>
+         <select name="service" class="select1 select_service">
+            <option value="Квартплата">Выберите услугу</option>
+         </select>
+      
+         <select name="card" class="select1 select_cards">
+            <option value="Карта">Выберите карту</option>
+         </select>
+         <br>
+         <br>
+         <input type="text" name="money" placeholder="Укажите сумму" class="inp" required>
+         <br>
+         <br>
+         <button class="trans-btn">Оплатить</button>
+      </div>
+   </form>
+
+
+   <div class="home-page">
+      <div class="cards"></div>
+      <div class="services">
+         <div class="services_item">
+            <div class="services_item_logo">
+               <div class="img"></div>
+            </div>
+            <div class="services_item_price">
+               <h1>Steam</h1>
+               <span>$100</span>
+            </div>
+         </div>
+      </div>
+      <div class="transacations">
+         <div class="head-title">
+            <h3>Today, 20 sep</h3>
+            <h3>400$</h3>
+         </div>
+         <div class="transactions-list">
+           
+         </div>
+      </div>
+      <div class="menu">
+         <div class="menu_item-onclick">
+            <img src="./img/transaction.svg" alt="">
+            <div class="title1">
+               <p>Оплата</p>
+            </div>
+         </div>
+         <div class="menu_item">
+            <img src="./img/services.svg" alt="">
+            <div class="title1">
+               <p>Сервисы</p>
+            </div>
+         </div>
+         <div class="menu_item">
+            <img src="./img/support.svg" alt="">
+            <div class="title1">
+               <p>Поддержка</p>
+            </div>
+         </div>
+         <div class="menu_item">
+            <img src="./img/settings.svg" alt="">
+            <div class="title1">
+               <p>Настройки</p>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+
+<button id="yak1" style="margin-bottom: 1000px;">Hello</button>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="./script.js"></script>
+<script type="text/javascript">
+   $(document).ready(() => {
+      $("#menu").on("click", "a", function (event) {
+         event.preventDefault();
+         var id = $(this).attr('href'),
+            top = $(id).offset().top;
+         $('body,html').animate({ scrollTop: top }, 300);
+      });
+   });
+</script>
